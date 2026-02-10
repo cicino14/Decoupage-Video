@@ -46,7 +46,7 @@ if uploaded_file is not None:
                 with st.spinner("Découpage en cours..."):
                     output_path = "clip_resultat.mp4"
                     # On crée le clip
-                    clip = video.sub_clip(start_total, end_total)
+                    clip = video.subclip(start_total, end_total)
                     clip.write_videofile(output_path, codec="libx264", audio_codec="aac", temp_audiofile="temp-audio.m4a", remove_temp=True)
                     clip.close()
                 
@@ -65,4 +65,5 @@ if uploaded_file is not None:
     
     # On ferme la vidéo source UNIQUEMENT après tout le reste
     video.close()
+
 
